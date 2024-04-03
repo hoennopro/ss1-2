@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Sach {
+        constructor(id, name) {
+          this.id = id;
+          this.name = name;
+        }
+      }
+
+      const books = [
+        new Sach(1, "Harry Potter"),
+        new Sach(2, "The Lord of the Rings"),
+        new Sach(3, "To Kill a Mockingbird"),
+      ];
+
+      function findBookById(id) {
+        const book = books.find((book) => book.id === id);
+        if (book) {
+          console.log(`ID sách: ${book.id}, Tên sách: ${book.name}`);
+        } else {
+          console.log("Không có kết quả tìm kiếm.");
+        }
+      }
+
+      findBookById(2);
+      findBookById(5);
+    </script>
+  </body>
+</html>

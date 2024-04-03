@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+      }
+
+      const employees = [
+        new Employee("Nguyễn Văn A", 21),
+        new Employee("Nguyễn Văn B", 30),
+        new Employee("Nguyễn Văn C", 19),
+      ];
+
+      function sortEmployee(arr, type) {
+        if (type === "Increase") {
+          arr.sort((a, b) => a.age - b.age);
+        } else if (type === "Decrease") {
+          arr.sort((a, b) => b.age - a.age);
+        }
+
+        arr.forEach((employee) => {
+          console.log(`Name: ${employee.name}, Age: ${employee.age}`);
+        });
+      }
+
+      console.log("Danh sách nhân viên theo thứ tự tăng dần về tuổi:");
+      sortEmployee(employees, "Increase");
+
+      console.log("Danh sách nhân viên theo thứ tự giảm dần về tuổi:");
+      sortEmployee(employees, "Decrease");
+    </script>
+  </body>
+</html>

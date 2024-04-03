@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function findMaxLessThanOrEqual(arr, num) {
+        const filteredArray = arr.filter((item) => item <= num);
+
+        if (filteredArray.length === 0) {
+          return undefined;
+        }
+
+        const maxNumber = filteredArray.reduce((max, current) => {
+          return current > max ? current : max;
+        });
+
+        return maxNumber;
+      }
+
+      const numbers = [1, 3, 6, 4, 9, 2];
+      const maxLessThanOrEqual = findMaxLessThanOrEqual(numbers, 5);
+
+      console.log(
+        "Số lớn nhất trong mảng có giá trị nhỏ hơn hoặc bằng 5 là:",
+        maxLessThanOrEqual
+      );
+    </script>
+  </body>
+</html>

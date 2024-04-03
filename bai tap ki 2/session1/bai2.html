@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class LopHoc {
+        constructor(id, number) {
+          this.id = id;
+          this.number = number;
+        }
+      }
+
+      const classes = [new LopHoc(1, 25), new LopHoc(2, 35), new LopHoc(3, 45)];
+
+      const modifiedClasses = classes.map((lh) => {
+        if (lh.number < 30) {
+          return new LopHoc(lh.id, lh.number + 10);
+        } else if (lh.number > 40) {
+          return new LopHoc(lh.id, lh.number - 10);
+        } else {
+          return lh;
+        }
+      });
+
+      console.log(modifiedClasses);
+    </script>
+  </body>
+</html>

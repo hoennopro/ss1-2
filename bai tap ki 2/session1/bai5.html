@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const accounts = [
+        { userName: "user1", password: "pass word" },
+        { userName: "user2", password: "password123" },
+        { userName: "user3", password: "securepassword" },
+      ];
+
+      function hasSpaceInPassword(account) {
+        return account.password.includes(" ");
+      }
+
+      if (accounts.some(hasSpaceInPassword)) {
+        console.log("Có tài khoản có password chứa dấu cách:");
+        accounts.forEach((account, index) => {
+          if (hasSpaceInPassword(account)) {
+            console.log(`Vị trí: ${index}, Tài khoản: ${account.userName}`);
+          }
+        });
+      } else {
+        console.log(
+          "Không có tài khoản nào có password chứa dấu cách. Dưới đây là mọi tài khoản hợp lệ:"
+        );
+        accounts.forEach((account) => {
+          console.log(`Tài khoản: ${account.userName}`);
+        });
+      }
+    </script>
+  </body>
+</html>

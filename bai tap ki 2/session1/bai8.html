@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function insertArray(arr1, arr2, position) {
+        const newArr = [
+          ...arr1.slice(0, position),
+          ...arr2,
+          ...arr1.slice(position),
+        ];
+
+        return newArr;
+      }
+
+      const array1 = [1, 2, "a", 6, 7];
+      const array2 = ["b", "hai"];
+      const position = 2;
+      const result = insertArray(array1, array2, position);
+
+      console.log(result);
+    </script>
+  </body>
+</html>
